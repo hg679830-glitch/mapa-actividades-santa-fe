@@ -51,9 +51,33 @@ tres preguntas de cierre también quedan como filas (sección = `CIERRE`).
 > implementaciones → Editar → Nueva versión** para que el cambio surta efecto
 > en la URL ya publicada.
 
+## Subir el proyecto a GitHub
+
+Este repositorio ya tiene un primer commit local. Para subirlo:
+
+1. En GitHub, crea un repositorio nuevo y **vacío** (sin README, sin
+   `.gitignore` — este proyecto ya trae los suyos). Por ejemplo, llámalo
+   `mapa-actividades-santa-fe` y márcalo **público** (necesario para usar
+   GitHub Pages gratis).
+2. GitHub te mostrará una URL como
+   `https://github.com/<tu-usuario>/mapa-actividades-santa-fe.git` — cópiala.
+3. En una terminal, parado en esta carpeta, corre:
+   ```bash
+   git remote add origin https://github.com/<tu-usuario>/mapa-actividades-santa-fe.git
+   git branch -M main
+   git push -u origin main
+   ```
+4. Recarga la página del repositorio en GitHub — ya deberías ver todos los
+   archivos (`index.html`, `app.js`, `data.js`, etc.).
+
+> Si `config.js` ya tiene la URL real de tu Google Apps Script pegada
+> (ver sección siguiente) antes de este paso, ese valor también queda
+> subido. Si prefieres configurarlo después, puedes editarlo directo en
+> GitHub (ícono de lápiz sobre el archivo) y hacer commit del cambio.
+
 ## Publicar la página (GitHub Pages)
 
-1. Sube este repositorio a GitHub (si no lo has hecho).
+1. Con el repositorio ya subido a GitHub (paso anterior).
 2. En el repo: **Settings → Pages**.
 3. En "Build and deployment", selecciona **Deploy from a branch**, rama
    `main`, carpeta `/ (root)`.
