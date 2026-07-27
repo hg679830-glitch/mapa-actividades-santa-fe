@@ -148,7 +148,8 @@ function renderDatosPage() {
   const ol = el("ol");
   [
     ["Llena todas las áreas en las que participas.", "Aunque no sean 'tu área'. Si dudas, llénala."],
-    ["Puedes dejarlo a medias.", "Tu avance se guarda en este navegador. Vuelve cuando quieras."],
+    ["Puedes dejarlo a medias.", "Tu avance se guarda automáticamente, pero solo en esta computadora y en este navegador (por ejemplo, Chrome de tu compu de la oficina). Para continuar donde te quedaste, vuelve a entrar a esta misma liga desde el mismo navegador y la misma computadora."],
+    ["No lo abras en modo incógnito ni borres el historial de este sitio.", "Si lo haces, se pierde el avance guardado y tendrías que empezar de nuevo."],
     ["Esto no evalúa tu desempeño.", "Buscamos dónde se atoran los procesos, no quién trabaja más o menos."],
   ].forEach(([t, n]) => {
     ol.appendChild(el("li", {}, [t, el("div", { class: "note" }, n)]));
