@@ -39,41 +39,56 @@ h1,h2,h3{ font-family:Georgia,'Times New Roman',serif; font-weight:600; margin:0
   position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;
 }
 .bg-anim .blob{
-  position:absolute; border-radius:50%; filter:blur(60px); opacity:.55;
+  position:absolute; border-radius:50%; filter:blur(55px); opacity:.6;
   will-change:transform;
 }
 .bg-anim .b1{
   width:560px; height:560px; left:-120px; top:-100px;
   background:radial-gradient(circle at 30% 30%, var(--oro-soft), transparent 70%);
-  animation: float1 26s ease-in-out infinite alternate;
+  animation: drift1 16s ease-in-out infinite;
 }
 .bg-anim .b2{
   width:520px; height:520px; right:-140px; top:15%;
   background:radial-gradient(circle at 60% 40%, #f0d98a, transparent 70%);
-  animation: float2 32s ease-in-out infinite alternate;
+  animation: drift2 20s ease-in-out infinite;
 }
 .bg-anim .b3{
   width:640px; height:640px; left:15%; bottom:-280px;
   background:radial-gradient(circle at 50% 50%, #ffe9a8, transparent 72%);
-  animation: float3 38s ease-in-out infinite alternate;
+  animation: drift3 24s ease-in-out infinite;
 }
 .bg-anim .b4{
   width:420px; height:420px; left:35%; top:35%;
   background:radial-gradient(circle at 50% 50%, #f7d78f, transparent 72%);
-  opacity:.4;
-  animation: float2 30s ease-in-out infinite alternate-reverse;
+  opacity:.45;
+  animation: drift4 18s ease-in-out infinite;
 }
-@keyframes float1{
+@keyframes drift1{
   0%{ transform:translate(0,0) scale(1); }
-  100%{ transform:translate(90px,70px) scale(1.18); }
+  25%{ transform:translate(140px,90px) scale(1.15); }
+  50%{ transform:translate(60px,180px) scale(0.95); }
+  75%{ transform:translate(-90px,60px) scale(1.1); }
+  100%{ transform:translate(0,0) scale(1); }
 }
-@keyframes float2{
+@keyframes drift2{
   0%{ transform:translate(0,0) scale(1); }
-  100%{ transform:translate(-80px,90px) scale(1.12); }
+  25%{ transform:translate(-160px,80px) scale(1.1); }
+  50%{ transform:translate(-70px,-100px) scale(1.2); }
+  75%{ transform:translate(90px,-40px) scale(0.95); }
+  100%{ transform:translate(0,0) scale(1); }
 }
-@keyframes float3{
+@keyframes drift3{
   0%{ transform:translate(0,0) scale(1); }
-  100%{ transform:translate(70px,-50px) scale(1.1); }
+  25%{ transform:translate(110px,-70px) scale(1.08); }
+  50%{ transform:translate(-40px,-140px) scale(1.18); }
+  75%{ transform:translate(-130px,-30px) scale(0.97); }
+  100%{ transform:translate(0,0) scale(1); }
+}
+@keyframes drift4{
+  0%{ transform:translate(0,0) scale(1); }
+  33%{ transform:translate(-100px,120px) scale(1.2); }
+  66%{ transform:translate(120px,60px) scale(0.9); }
+  100%{ transform:translate(0,0) scale(1); }
 }
 @media (prefers-reduced-motion: reduce){
   .bg-anim .blob{ animation:none; }
