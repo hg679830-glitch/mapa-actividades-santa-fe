@@ -241,6 +241,6 @@ const SURVEY_DATA = {
     "¿Qué decisión que hoy escalas te sentirías cómodo tomando tú, si tuvieras un límite claro por escrito?",
     "¿Cuál es el trámite que más veces has tenido que repetir o corregir este mes?",
     "¿Con qué frecuencia atiendes socios sin que eso sea formalmente parte de tu puesto? ¿Cuánto tiempo al día te lleva?",
-    "Comentarios adicionales: cualquier cosa que no haya cabido en las hojas anteriores."
+    "Comentarios adicionales: cualquier cosa que no haya considerado en las hojas anteriores."
   ]
 };

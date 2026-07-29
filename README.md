@@ -40,10 +40,16 @@ apps-script.gs  Código para pegar en Google Apps Script (ver abajo)
    ```
 8. Guarda y sube el cambio a GitHub.
 
-Cada vez que alguien envíe el cuestionario, se agregarán filas nuevas a una
-hoja llamada **"Respuestas"** dentro de tu Google Sheet (se crea sola la
-primera vez). Cada fila es una actividad marcada Sí/No de una persona; las
-tres preguntas de cierre también quedan como filas (sección = `CIERRE`).
+Cada vez que alguien envíe el cuestionario, se crea (o se reemplaza, si esa
+persona ya había enviado antes) una **hoja con el nombre de esa persona**
+dentro de tu Google Sheet. Ahí quedan todas sus actividades marcadas Sí/No,
+incluyendo las que agregó en "OTRAS ACTIVIDADES" (aparecen como
+`[OTRA] <lo que escribió>`), y sus tres respuestas de Cierre (sección `CIERRE`).
+
+> Si dos personas distintas tienen el mismo nombre, van a compartir la misma
+> hoja (se sobrescriben entre sí). Si eso llega a pasar, dile a una de ellas
+> que use su nombre completo con algo que las distinga (por ejemplo agregando
+> su área) al llenar el campo "Nombre completo".
 
 > Si alguna vez necesitas cambiar la lógica de guardado, vuelve a editar
 > `apps-script.gs` en este repo y **cópialo de nuevo** al editor de Apps
