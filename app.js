@@ -389,7 +389,21 @@ function renderDone() {
   main.appendChild(
     el("div", { class: "done-screen" }, [
       el("h2", {}, "¡Gracias! Tus respuestas quedaron registradas."),
-      el("p", {}, "Ya puedes cerrar esta página. Si quieres corregir algo, escríbele a quien te compartió este cuestionario."),
+      el("p", {}, "Ya puedes cerrar esta página. Si necesitas corregir algo o volver a llenarlo desde cero, usa el botón de abajo — se sobrescribe tu envío anterior con el nuevo."),
+      el(
+        "button",
+        {
+          class: "btn",
+          type: "button",
+          style: "margin-top:20px;",
+          onclick: () => {
+            if (!confirm("Esto borra tu avance guardado en este navegador y empieza el cuestionario en blanco. ¿Continuar?")) return;
+            localStorage.removeItem(STORAGE_KEY);
+            location.reload();
+          },
+        },
+        "Llenarlo de nuevo"
+      ),
     ])
   );
 }
