@@ -389,7 +389,7 @@ function renderDone() {
   main.appendChild(
     el("div", { class: "done-screen" }, [
       el("h2", {}, "¡Gracias! Tus respuestas quedaron registradas."),
-      el("p", {}, "Ya puedes cerrar esta página. Si necesitas corregir algo o volver a llenarlo desde cero, usa el botón de abajo — se sobrescribe tu envío anterior con el nuevo."),
+      el("p", {}, "Ya puedes cerrar esta página. Si necesitas corregir o agregar algo, usa el botón de abajo — vas a ver tus respuestas tal como las dejaste, puedes editarlas y al enviar de nuevo se actualiza tu información en el Google Sheet (no se duplica ni se borra lo anterior)."),
       el(
         "button",
         {
@@ -397,12 +397,14 @@ function renderDone() {
           type: "button",
           style: "margin-top:20px;",
           onclick: () => {
-            if (!confirm("Esto borra tu avance guardado en este navegador y empieza el cuestionario en blanco. ¿Continuar?")) return;
-            localStorage.removeItem(STORAGE_KEY);
-            location.reload();
+            state.submitted = false;
+            state.pageIndex = 0;
+            saveState();
+            render();
+            window.scrollTo({ top: 0, behavior: "instant" });
           },
         },
-        "Llenarlo de nuevo"
+        "Editar mis respuestas"
       ),
     ])
   );
